@@ -1,4 +1,4 @@
-JogodaVelha/*.class
-JogodaVelha/target/
-JogodaVelha/.idea/
-JogodaVelha/JogodaVelha.iml
+*.class
+target/
+.idea/
+JogodaVelha.iml
