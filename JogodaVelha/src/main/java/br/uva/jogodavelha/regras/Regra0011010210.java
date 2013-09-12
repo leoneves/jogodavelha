@@ -4,18 +4,17 @@ package br.uva.jogodavelha.regras;
  * Created with IntelliJ IDEA.
  * User: leonardoneves
  * Date: 9/12/13
- * Time: 4:28 PM
+ * Time: 5:32 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Regra1101 implements RegraResponsabilidade {
+public class Regra0011010210 implements RegraResponsabilidade {
 
     private RegraResponsabilidade proximaRegra;
 
     @Override
     public String processarRegra(String[][] tabuleiro, String jogada) {
-        if(jogada.equals("01") && tabuleiro[0][2].isEmpty()){
-            return "02";
-        }
+        if (jogada.equals("10") && tabuleiro[0][2].equals("O") && tabuleiro[1][1].equals("O"))
+            return "20";
         return proximaRegra.processarRegra(tabuleiro, jogada);
     }
 
