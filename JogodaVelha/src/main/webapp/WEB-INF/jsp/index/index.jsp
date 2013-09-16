@@ -50,7 +50,10 @@
                 url: "http://0.0.0.0:8080/computerTurn",
                 data: { stringTabuleiro: httpTabuleiro, jogada: celula },
                 success: function (data) {
-                    computerTurn(data);
+                    if(data == 'celV')
+                        alert('Deu Velha');
+                    else
+                        computerTurn(data);
                 }
             });
         }
