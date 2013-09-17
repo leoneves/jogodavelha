@@ -13,7 +13,7 @@ public class Regra2010 implements RegraResponsabilidade {
 
     @Override
     public String processarRegra(String[][] tabuleiro, String jogada) {
-        if (jogada.equals("20") && tabuleiro[1][0].isEmpty() && tabuleiro[1][1].equals("O"))
+        if (jogada.equals("20") && tabuleiro[1][0].isEmpty() && tabuleiro[1][1].equals("O") && (!tabuleiro[2][2].equals("X")) )
             return "10";
         return proximaRegra.processarRegra(tabuleiro, jogada);
     }

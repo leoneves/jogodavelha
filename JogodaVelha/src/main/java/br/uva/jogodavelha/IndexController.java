@@ -73,6 +73,10 @@ public class IndexController {
         RegraResponsabilidade regraJogMeio2200 = new RegraJogMeio2200();
         RegraResponsabilidade regraJogMeio2101 = new RegraJogMeio2101();
         RegraResponsabilidade regraJogMeio2001com02 = new RegraJogMeio2001com02();
+        RegraResponsabilidade regraComMeio0001 = new RegraComMeio0001();
+        RegraResponsabilidade regraComMeio0010 = new RegraComMeio0010();
+        RegraResponsabilidade regraComMeio2021 = new RegraComMeio2021();
+        RegraResponsabilidade regraComMeio2221 = new RegraComMeio2221();
 
         //regra se sobrou apenas duas - então ninguém vai ganhar
         RegraResponsabilidade regraQualquerJogada = new RegraQualquerJogada();
@@ -118,9 +122,13 @@ public class IndexController {
         regraJogMeio2012com02.proximaRegra(regraJogMeio2200);
         regraJogMeio2200.proximaRegra(regraJogMeio2101);
         regraJogMeio2101.proximaRegra(regraJogMeio2001com02);
+        regraJogMeio2001com02.proximaRegra(regraComMeio0001);
+        regraComMeio0001.proximaRegra(regraComMeio0010);
+        regraComMeio0010.proximaRegra(regraComMeio2021);
+        regraComMeio2021.proximaRegra(regraComMeio2221);
 
         //última regra
-        regraJogMeio2001com02.proximaRegra(regraQualquerJogada);
+        regraComMeio2221.proximaRegra(regraQualquerJogada);
 
         //processa as regras
         jogadaComputer = regraDoMeio.processarRegra(tabuleiro, jogada);

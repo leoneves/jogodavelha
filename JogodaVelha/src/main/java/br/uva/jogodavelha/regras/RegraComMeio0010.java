@@ -2,19 +2,19 @@ package br.uva.jogodavelha.regras;
 
 /**
  * Created with IntelliJ IDEA.
- * User: leonardoneves
- * Date: 9/12/13
- * Time: 5:32 PM
+ * User: leoneves
+ * Date: 9/17/13
+ * Time: 1:01 AM
  * To change this template use File | Settings | File Templates.
  */
-public class Regra0011010210 implements RegraResponsabilidade {
+public class RegraComMeio0010 implements RegraResponsabilidade {
 
     private RegraResponsabilidade proximaRegra;
 
     @Override
     public String processarRegra(String[][] tabuleiro, String jogada) {
-        if (jogada.equals("10") && tabuleiro[0][2].equals("O") && tabuleiro[1][1].equals("O") && tabuleiro[2][0].isEmpty())
-            return "20";
+        if (tabuleiro[1][1].equals("O") && jogada.equals("00") && tabuleiro[1][0].isEmpty() && tabuleiro[2][0].equals("X"))
+            return "10";
         return proximaRegra.processarRegra(tabuleiro, jogada);
     }
 
