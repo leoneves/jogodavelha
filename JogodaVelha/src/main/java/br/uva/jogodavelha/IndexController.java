@@ -77,6 +77,7 @@ public class IndexController {
         RegraResponsabilidade regraComMeio0010 = new RegraComMeio0010();
         RegraResponsabilidade regraComMeio2021 = new RegraComMeio2021();
         RegraResponsabilidade regraComMeio2221 = new RegraComMeio2221();
+        RegraResponsabilidade regraComMeio2021com12X = new RegraComMeio2021com12X();
 
         //regra se sobrou apenas duas - então ninguém vai ganhar
         RegraResponsabilidade regraQualquerJogada = new RegraQualquerJogada();
@@ -97,7 +98,8 @@ public class IndexController {
         regra1101.proximaRegra(regra1102);
         regra1102.proximaRegra(regra1110);
         regra1110.proximaRegra(regra1202);
-        regra1202.proximaRegra(regra2010);
+        regra1202.proximaRegra(regraComMeio2021com12X);
+        regraComMeio2021com12X.proximaRegra(regra2010);
         regra2010.proximaRegra(regra2112com02emX);
         regra2112com02emX.proximaRegra(regra2120);
         regra2120.proximaRegra(regra22se00comX);
