@@ -65,6 +65,14 @@ public class IndexController {
         RegraResponsabilidade regraSe02e01ocupada = new RegraSe02e01ocupada();
         RegraResponsabilidade regraSe20e10ocupada = new RegraSe20e10ocupada();
         RegraResponsabilidade regraSe02e12ocupada = new RegraSe02e12ocupada();
+        RegraResponsabilidade regraJogadorMeio0022 = new RegraJogadorMeio0022();
+        RegraResponsabilidade regraJogMeio1210 = new RegraJogMeio1210();
+        RegraResponsabilidade regraJogMeio0121 = new RegraJogMeio0121();
+        RegraResponsabilidade regraJogMeio1012 = new RegraJogMeio1012();
+        RegraResponsabilidade regraJogMeio2012com02 = new RegraJogMeio2012com02();
+        RegraResponsabilidade regraJogMeio2200 = new RegraJogMeio2200();
+        RegraResponsabilidade regraJogMeio2101 = new RegraJogMeio2101();
+        RegraResponsabilidade regraJogMeio2001com02 = new RegraJogMeio2001com02();
 
         //regra se sobrou apenas duas - então ninguém vai ganhar
         RegraResponsabilidade regraQualquerJogada = new RegraQualquerJogada();
@@ -102,9 +110,17 @@ public class IndexController {
         regraSe01e02ocupada.proximaRegra(regraSe02e01ocupada);
         regraSe02e01ocupada.proximaRegra(regraSe20e10ocupada);
         regraSe20e10ocupada.proximaRegra(regraSe02e12ocupada);
+        regraSe02e12ocupada.proximaRegra(regraJogadorMeio0022);
+        regraJogadorMeio0022.proximaRegra(regraJogMeio1210);
+        regraJogMeio1210.proximaRegra(regraJogMeio0121);
+        regraJogMeio0121.proximaRegra(regraJogMeio1012);
+        regraJogMeio1012.proximaRegra(regraJogMeio2012com02);
+        regraJogMeio2012com02.proximaRegra(regraJogMeio2200);
+        regraJogMeio2200.proximaRegra(regraJogMeio2101);
+        regraJogMeio2101.proximaRegra(regraJogMeio2001com02);
 
         //última regra
-        regraSe02e12ocupada.proximaRegra(regraQualquerJogada);
+        regraJogMeio2001com02.proximaRegra(regraQualquerJogada);
 
         //processa as regras
         jogadaComputer = regraDoMeio.processarRegra(tabuleiro, jogada);
